@@ -3,9 +3,11 @@ require('dotenv').config()
 const env = process.env
 
 function Serve(app) {
-  app.listen(env.PORT, () => {
+  const port = env.PORT || 3000
+
+  app.listen(port, () => {
     console.log();
-    console.log(`Server Started @ http://localhost:${env.PORT}`);
+    console.log(`Server Started @ http://localhost:${port}`);
     console.log();
   })
 }
