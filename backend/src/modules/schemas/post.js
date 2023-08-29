@@ -13,6 +13,10 @@ const post = new mongoose.Schema({
     type: String,
     required: true
   },
+  lastUpdate: {
+    type: String,
+    required: false
+  },
   content: {
     type: String,
     required: true
@@ -20,6 +24,11 @@ const post = new mongoose.Schema({
   author: {
     type: String,
     required: true
+  },
+  isPublish: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 })
 

@@ -12,8 +12,10 @@ async function NewPost(contents) {
     title: contents.title,
     tags: contents.tags,
     date: contents.time,
+    lastUpdate: contents.time,
     content: contents.mainContents,
     author: user._id,
+    isPublish: contents.publish
   }
 
   try {
