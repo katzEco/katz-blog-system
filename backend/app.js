@@ -4,5 +4,7 @@ const Serve = require('./src/Serve')
 
 const app = exp()
 
+require('./src/modules/mongo')
+
 Routes(app, __dirname)
 Serve(app)
