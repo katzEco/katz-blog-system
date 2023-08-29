@@ -1,4 +1,5 @@
 const NewPost = require('./modules/functions/new_post')
+const UpdatePost = require('./modules/functions/update_post')
 
 const NewUser = require('./modules/functions/new_user')
 
@@ -18,6 +19,19 @@ async function Routes(app, root) {
     }
 
     res.json(await NewPost(contentInp))
+  })
+
+  app.post('/be/update_post', (req, res) => {
+    const contentInp = {
+      id: req.body.id,
+      title: req.body.title,
+      tags: req.body.tags,
+      lastUpdate: new Date().getTime(),
+      content: req.body.contents,
+      publish: req.body.publish
+    }
+
+    res.json(UpdatePost(contentInp))
   })
 
   app.post('/be/new_user', async (req, res) => {
