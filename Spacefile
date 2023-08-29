@@ -1,0 +1,22 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: backend
+    src: backend
+    engine: nodejs16
+    primary: false
+    run: node app.js
+    dev: nodemon app.js
+    path: '/api'
+    public_routes:
+      - '/rss'
+
+  - name: frontend
+    src: frontend
+    engine: svelte-kit
+    primary: true
+    path: '/'
+    public_routes: 
+      - '/'
+      - '/blogs/*'
+      - '/about'
