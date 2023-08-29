@@ -3,7 +3,7 @@ require('dotenv').config()
 const env = process.env
 
 function Serve(app) {
-  const port = env.PORT || 3000
+  const port = env.PORT || 3001
 
   app.listen(port, () => {
     console.log();
