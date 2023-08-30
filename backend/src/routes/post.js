@@ -7,9 +7,9 @@ async function PostRoutes(app) {
     const contentInp = {
       title: req.body.title,
       tags: req.body.tags,
-      date: new Date().getTime(),
-      content: req.body.contents,
-      author: req.body.author_name,
+      date: new Date().getTime().toString(),
+      content: req.body.content,
+      author: req.body.author,
       publish: req.body.publish,
     }
 
@@ -21,7 +21,7 @@ async function PostRoutes(app) {
       id: req.body.id,
       title: req.body.title,
       tags: req.body.tags,
-      lastUpdate: new Date().getTime(),
+      lastUpdate: new Date().getTime().toString(),
       content: req.body.contents,
       publish: req.body.publish,
     }
@@ -29,7 +29,7 @@ async function PostRoutes(app) {
     res.json(await UpdatePost(contentInp))
   })
 
-  app.post('/be/list_post', async (req, res) => {
+  app.get('/be/list_post', async (req, res) => {
     res.json(await ListPosts())
   })
 }
