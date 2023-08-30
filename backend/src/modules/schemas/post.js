@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 const post = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   tags: {
     type: String,
@@ -27,7 +28,6 @@ const post = new mongoose.Schema({
   },
   isPublish: {
     type: Boolean,
-    required: true,
     default: false
   }
 })

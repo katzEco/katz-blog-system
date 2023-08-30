@@ -11,9 +11,9 @@ async function NewPost(contents) {
   const posts = {
     title: contents.title,
     tags: contents.tags,
-    date: contents.time,
-    lastUpdate: contents.time,
-    content: contents.mainContents,
+    date: contents.date,
+    lastUpdate: contents.date,
+    content: contents.content,
     author: user._id,
     isPublish: contents.publish
   }
