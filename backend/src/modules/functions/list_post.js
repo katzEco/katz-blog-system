@@ -13,10 +13,11 @@ async function ListPosts() {
       let user = await UserModel.findOne({ _id: posting.author }).exec()
 
       let temp = {
+        id: posting._id,
         title: posting.title,
         tags: posting.tags,
         date: DateLine(Number(posting.date)),
-        author: user.username,
+        author: user.name,
         isPublish: posting.isPublish,
         content: posting.content
       }
